@@ -1,11 +1,22 @@
 ---
 const year = new Date().getFullYear();
 ---
-<footer class="border-t border-surface-200 py-10 mt-auto">
+<footer class="border-t border-surface-200/15 py-12 mt-auto bg-surface-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-      <p class="text-sm font-semibold text-surface-900 font-display">Untitled Business</p>
-      <p class="text-sm text-surface-800/50">&copy; {year} Untitled Business. All rights reserved.</p>
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div>
+        <p class="text-base font-bold text-surface-950 font-display">OceanLab</p>
+        <p class="mt-1 text-sm text-surface-800/45 font-body">Marine science education for curious young minds.</p>
+      </div>
+      <div class="flex flex-wrap gap-6">
+        <a href="#explore" class="text-sm text-surface-800/45 hover:text-brand-400 transition-colors font-display">Explore</a>
+        <a href="#how-it-works" class="text-sm text-surface-800/45 hover:text-brand-400 transition-colors font-display">How It Works</a>
+        <a href="/blog" class="text-sm text-surface-800/45 hover:text-brand-400 transition-colors font-display">Blog</a>
+        <a href="mailto:hello@oceanlab.science" class="text-sm text-surface-800/45 hover:text-brand-400 transition-colors font-display">Contact</a>
+      </div>
+    </div>
+    <div class="mt-8 pt-6 border-t border-surface-200/10">
+      <p class="text-sm text-surface-800/30 font-display">&copy; {year} OceanLab. All rights reserved. Built with curiosity.</p>
     </div>
   </div>
 </footer>
