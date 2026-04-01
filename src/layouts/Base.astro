@@ -1,6 +1,4 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -8,7 +6,10 @@ interface Props {
   description?: string;
 }
 
-const { title = 'Untitled Business', description = 'Create an awesome educational website for kids about all things the ocean and marine wildlife from a scientific and biology standpoint.' } = Astro.props;
+const {
+  title = 'Pelagic',
+  description = 'Free ocean science education for kids ages 7–14. Explore marine life, ocean zones, and the biology of the deep.'
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -18,13 +19,10 @@ const { title = 'Untitled Business', description = 'Create an awesome educationa
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta name="theme-color" content="#0a1020" />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen flex flex-col bg-surface-50 text-surface-900 font-body antialiased">
-    <Header />
-    <main class="flex-1">
-      <slot />
-    </main>
-    <Footer />
+  <body>
+    <slot />
   </body>
 </html>

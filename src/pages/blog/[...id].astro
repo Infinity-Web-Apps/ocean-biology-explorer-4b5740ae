@@ -1,5 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -13,22 +15,44 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 ---
-<Base title={post.data.title} description={post.data.description}>
-  <article class="py-16 md:py-20">
+<Base title={`${post.data.title} | Pelagic`} description={post.data.description}>
+  <Header />
+  <main class="flex-1 min-h-screen py-16 md:py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <header class="mb-10">
-        <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-surface-900 font-display">
-          {post.data.title}
-        </h1>
-        {post.data.pubDate && (
-          <time class="mt-4 block text-sm text-surface-800/40">
-            {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </time>
-        )}
-      </header>
-      <div class="prose max-w-none">
-        <Content />
-      </div>
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-1.5 text-sm font-display mb-10 transition-colors duration-150"
+        style="color: oklch(0.55 0.014 235);"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/>
+        </svg>
+        Back to Blog
+      </a>
+
+      <article>
+        <header class="mb-12">
+          <h1
+            class="text-3xl md:text-4xl font-bold tracking-tight font-display mb-4"
+            style="color: oklch(0.95 0.004 235);"
+          >
+            {post.data.title}
+          </h1>
+          {post.data.description && (
+            <p class="text-lg leading-relaxed mb-4 font-body" style="color: oklch(0.62 0.014 235);">{post.data.description}</p>
+          )}
+          {post.data.pubDate && (
+            <time class="block text-sm font-display" style="color: oklch(0.42 0.012 235);">
+              {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+          )}
+        </header>
+
+        <div class="prose">
+          <Content />
+        </div>
+      </article>
     </div>
-  </article>
+  </main>
+  <Footer />
 </Base>

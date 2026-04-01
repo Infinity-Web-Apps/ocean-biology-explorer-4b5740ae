@@ -1,201 +1,612 @@
 ---
 import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
-<Base title='Pelagic Landing Page v1'>
-<!-- NAVIGATION -->
-  <nav>
-    <a href="#" class="nav-logo">PELA<span>GIC</span></a>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Animals</a></li>
-      <li><a href="#">Ecosystems</a></li>
-      <li><a href="#">Science</a></li>
-      <li><a href="#">For Teachers</a></li>
-    </ul>
-  </nav>
+<Base
+  title="Pelagic | Ocean Science for Kids"
+  description="Free, science-based ocean education for curious kids ages 7–14. Explore marine life, ocean zones, and the biology of the deep — no paywalls, ever."
+>
+  <Header />
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="particles">
-      <div class="particle p1"></div>
-      <div class="particle p2"></div>
-      <div class="particle p3"></div>
-      <div class="particle p4"></div>
-      <div class="particle p5"></div>
-      <div class="particle p6"></div>
-      <div class="particle p7"></div>
-      <div class="particle p8"></div>
-    </div>
-    <div class="hero-content">
-      <span class="hero-badge">🌊 Free Ocean Science Education</span>
-      <h1>Dive Into the<br /><em>World's Oceans</em></h1>
-      <p class="hero-sub">
-        Free, science-based learning for curious kids — explore marine life,
-        ocean ecosystems, and the biology of the deep. No paywalls. Ever.
-      </p>
-      <div class="hero-ctas">
-        <a href="#topics" class="btn-primary">Start Exploring →</a>
-        <a href="#teachers" class="btn-secondary">For Teachers</a>
-      </div>
-    </div>
-  </section>
+  <main>
+    <!-- ================================================================
+         1. HERO
+    ================================================================ -->
+    <section
+      class="relative min-h-[85vh] flex flex-col items-center justify-center px-4 pt-20 pb-24 overflow-hidden"
+      style="background: radial-gradient(ellipse at 25% 20%, oklch(0.22 0.09 210 / 0.35), transparent 50%), radial-gradient(ellipse at 75% 85%, oklch(0.20 0.07 180 / 0.25), transparent 55%), linear-gradient(to bottom, oklch(0.08 0.018 248), oklch(0.12 0.025 240));"
+    >
+      <!-- Subtle horizontal scan lines for ocean depth feel -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style="background: repeating-linear-gradient(0deg, oklch(0.72 0.18 192 / 0.025) 0px, oklch(0.72 0.18 192 / 0.025) 1px, transparent 1px, transparent 60px);"
+      ></div>
 
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <p>✦ Scientifically Accurate &nbsp;&nbsp;✦ Free Forever &nbsp;&nbsp;✦ For Ages 7–14 &nbsp;&nbsp;✦ Teacher-Ready</p>
-  </div>
+      <!-- Floating particle blobs -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div class="absolute w-64 h-64 rounded-full animate-float" style="top: 10%; left: 5%; background: radial-gradient(circle, oklch(0.72 0.18 192 / 0.06), transparent 70%); animation-delay: 0s;"></div>
+        <div class="absolute w-48 h-48 rounded-full animate-float" style="top: 60%; right: 8%; background: radial-gradient(circle, oklch(0.84 0.15 75 / 0.05), transparent 70%); animation-delay: 1.5s;"></div>
+        <div class="absolute w-32 h-32 rounded-full animate-float" style="bottom: 20%; left: 20%; background: radial-gradient(circle, oklch(0.72 0.18 192 / 0.04), transparent 70%); animation-delay: 3s;"></div>
+      </div>
 
-  <!-- TOPIC GRID -->
-  <section class="topics" id="topics">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Explore the Ocean</span>
-        <h2 class="section-title">What Will You Discover?</h2>
-        <p class="section-sub">From apex predators to microscopic plankton — the ocean is full of extraordinary science waiting to be explored.</p>
-      </div>
-      <div class="topic-grid">
-        <div class="topic-card">
-          <span class="topic-icon">🦈</span>
-          <h3>Sharks &amp; Rays</h3>
-          <p>Apex predators that have ruled the ocean for 450 million years.</p>
-          <a href="#" class="topic-link">Explore →</a>
+      <div class="relative z-10 max-w-4xl mx-auto text-center">
+        <!-- Badge -->
+        <div
+          class="animate-fade-in inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-8 font-display"
+          style="background: oklch(0.72 0.18 192 / 0.10); border: 1px solid oklch(0.72 0.18 192 / 0.28); color: oklch(0.72 0.18 192);"
+        >
+          🌊 Free Ocean Science Education
         </div>
-        <div class="topic-card">
-          <span class="topic-icon">🐬</span>
-          <h3>Dolphins &amp; Whales</h3>
-          <p>The ocean's most intelligent mammals — masters of echolocation and social behavior.</p>
-          <a href="#" class="topic-link">Explore →</a>
-        </div>
-        <div class="topic-card">
-          <span class="topic-icon">🐙</span>
-          <h3>Octopus &amp; Squid</h3>
-          <p>Masters of camouflage with neurons in their arms and three hearts.</p>
-          <a href="#" class="topic-link">Explore →</a>
-        </div>
-        <div class="topic-card">
-          <span class="topic-icon">🪸</span>
-          <h3>Coral Reefs</h3>
-          <p>The rainforests of the sea — home to 25% of all marine species.</p>
-          <a href="#" class="topic-link">Explore →</a>
-        </div>
-        <div class="topic-card">
-          <span class="topic-icon">🌊</span>
-          <h3>The Deep Sea</h3>
-          <p>Explore the hadal zone, where sunlight never reaches and life finds a way.</p>
-          <a href="#" class="topic-link">Explore →</a>
-        </div>
-        <div class="topic-card">
-          <span class="topic-icon">🐢</span>
-          <h3>Sea Turtles</h3>
-          <p>Ancient navigators that have crossed the world's oceans for 100 million years.</p>
-          <a href="#" class="topic-link">Explore →</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- VALUE PROPS -->
-  <section class="value-props">
-    <div class="container">
-      <div class="section-header" style="text-align:center;">
-        <span class="section-label">Why Pelagic?</span>
-        <h2 class="section-title">Science the Way It Should Be Taught</h2>
-      </div>
-      <div class="props-grid">
-        <div class="prop-card">
-          <span class="prop-icon">🔬</span>
-          <h3>Science-First</h3>
-          <p>Every article is written to real biological standards. Real terminology, real research, real understanding — never dumbed down.</p>
-        </div>
-        <div class="prop-card">
-          <span class="prop-icon">🆓</span>
-          <h3>Always Free</h3>
-          <p>No subscriptions. No paywalls. No ads targeting kids. Pelagic is permanently free because learning should be accessible to everyone.</p>
-        </div>
-        <div class="prop-card">
-          <span class="prop-icon">👩‍🏫</span>
-          <h3>Teacher-Ready</h3>
-          <p>Curriculum-aligned with NGSS standards. Download lesson plans, assign articles, and inspire the next generation of ocean scientists.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- Headline -->
+        <h1
+          class="animate-slide-up text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight mb-6 font-display"
+          style="color: oklch(0.95 0.004 235);"
+        >
+          The ocean is <span class="text-gradient">96% unexplored.</span><br />
+          Let's change that.
+        </h1>
 
-  <!-- ARTICLES -->
-  <section class="articles">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Latest From the Deep</span>
-        <h2 class="section-title">Start Reading</h2>
-        <p class="section-sub">Flagship articles written for curious minds — scientifically rigorous, endlessly fascinating.</p>
+        <!-- Subheadline -->
+        <p
+          class="animate-slide-up delay-100 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10 font-body"
+          style="color: oklch(0.65 0.014 235);"
+        >
+          Free, science-based ocean learning for curious kids ages 7–14. Explore marine life,
+          ocean zones, and the biology of the deep — no paywalls, ever.
+        </p>
+
+        <!-- CTAs -->
+        <div class="animate-slide-up delay-200 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="#creatures-section"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base font-display transition-all duration-200 hover:scale-105"
+            style="background: oklch(0.72 0.18 192); color: oklch(0.08 0.02 245); box-shadow: 0 0 32px oklch(0.72 0.18 192 / 0.25);"
+          >
+            Start Exploring
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <a
+            href="#creatures-section"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base font-display transition-all duration-200"
+            style="border: 1px solid oklch(0.72 0.18 192 / 0.45); color: oklch(0.72 0.18 192);"
+          >
+            Meet the Creatures
+          </a>
+        </div>
+
+        <!-- Micro proof -->
+        <p class="animate-slide-up delay-300 mt-8 text-xs font-display" style="color: oklch(0.45 0.012 235);">
+          ✦ Scientifically accurate &nbsp;·&nbsp; ✦ Ages 7–14 &nbsp;·&nbsp; ✦ NGSS-aligned &nbsp;·&nbsp; ✦ Free forever
+        </p>
       </div>
-      <div class="articles-grid">
-        <div class="article-card">
-          <div class="article-img sharks">🦈</div>
-          <div class="article-body">
-            <span class="article-tag">Evolution</span>
-            <h3>How Sharks Have Survived 450 Million Years</h3>
-            <p>Sharks predate dinosaurs by 200 million years. Discover the extraordinary biology that made them nearly indestructible.</p>
-            <a href="#" class="article-link">Read More →</a>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" style="color: oklch(0.72 0.18 192 / 0.45);">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         2. STATS BAR
+    ================================================================ -->
+    <div style="background: oklch(0.72 0.18 192 / 0.07); border-top: 1px solid oklch(0.72 0.18 192 / 0.14); border-bottom: 1px solid oklch(0.72 0.18 192 / 0.14);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div>
+            <p class="text-4xl font-extrabold font-display text-gradient">71%</p>
+            <p class="mt-1.5 text-sm font-display leading-snug" style="color: oklch(0.55 0.014 235);">of Earth is covered<br/>by ocean</p>
           </div>
-        </div>
-        <div class="article-card">
-          <div class="article-img octopus">🐙</div>
-          <div class="article-body">
-            <span class="article-tag">Intelligence</span>
-            <h3>The Hidden Intelligence of Octopuses</h3>
-            <p>Three hearts, blue blood, and neurons in every arm. Octopuses are unlike any other creature on Earth.</p>
-            <a href="#" class="article-link">Read More →</a>
+          <div>
+            <p class="text-4xl font-extrabold font-display text-gradient">96%</p>
+            <p class="mt-1.5 text-sm font-display leading-snug" style="color: oklch(0.55 0.014 235);">of the ocean<br/>remains unexplored</p>
           </div>
-        </div>
-        <div class="article-card">
-          <div class="article-img coral">🪸</div>
-          <div class="article-body">
-            <span class="article-tag">Conservation</span>
-            <h3>Why Coral Reefs Are Dying (And How We Can Help)</h3>
-            <p>Coral reefs support 25% of all marine life. Here's the science behind the crisis — and what we can do about it.</p>
-            <a href="#" class="article-link">Read More →</a>
+          <div>
+            <p class="text-4xl font-extrabold font-display text-gradient">228,450</p>
+            <p class="mt-1.5 text-sm font-display leading-snug" style="color: oklch(0.55 0.014 235);">known marine<br/>species</p>
+          </div>
+          <div>
+            <p class="text-4xl font-extrabold font-display text-gradient">~2M</p>
+            <p class="mt-1.5 text-sm font-display leading-snug" style="color: oklch(0.55 0.014 235);">species yet<br/>to discover</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- TEACHERS -->
-  <section class="teachers" id="teachers">
-    <div class="container">
-      <span class="section-label">For Educators</span>
-      <h2 class="section-title">Built for the Classroom</h2>
-      <p class="section-sub">
-        Pelagic provides free, curriculum-aligned marine biology resources for K–8 educators.
-        Use our articles in class, download lesson plans, and inspire the next generation of ocean scientists.
-        Everything here is NGSS-compatible and completely free.
-      </p>
-      <a href="#" class="btn-primary">Explore Teacher Resources →</a>
+    <!-- ================================================================
+         3. WHY THE OCEAN? (2-column with depth diagram)
+    ================================================================ -->
+    <section
+      class="py-20 md:py-28 px-4"
+      style="background: linear-gradient(to bottom, oklch(0.10 0.02 245), oklch(0.12 0.025 240));"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Text -->
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase mb-3 font-display" style="color: oklch(0.72 0.18 192);">Why the Ocean?</p>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-display mb-6" style="color: oklch(0.95 0.004 235);">
+              Earth's last great<br/>frontier is <span class="text-gradient">right here.</span>
+            </h2>
+            <p class="text-base leading-relaxed mb-4 font-body" style="color: oklch(0.65 0.014 235);">
+              The ocean covers 71% of our planet's surface and contains 97% of all Earth's water. Yet we've mapped more of Mars than our own ocean floor. The deep sea is the largest ecosystem on Earth — and we barely know it exists.
+            </p>
+            <p class="text-base leading-relaxed mb-8 font-body" style="color: oklch(0.65 0.014 235);">
+              From creatures that produce their own light to fish that survive crushing pressures — the ocean is full of science that will blow your mind.
+            </p>
+            <div class="grid grid-cols-2 gap-3">
+              {[
+                { emoji: "🌡️", text: "Regulates Earth's climate" },
+                { emoji: "💧", text: "Produces 50% of our oxygen" },
+                { emoji: "🧬", text: "All life began in the sea" },
+                { emoji: "🔬", text: "New species found every day" },
+              ].map(item => (
+                <div class="flex items-center gap-2.5 p-3 rounded-lg" style="background: oklch(0.14 0.025 238 / 0.6); border: 1px solid oklch(0.22 0.025 235 / 0.3);">
+                  <span class="text-xl">{item.emoji}</span>
+                  <span class="text-sm font-display leading-snug" style="color: oklch(0.75 0.012 235);">{item.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Ocean depth diagram -->
+          <div class="rounded-2xl p-6 border" style="background: oklch(0.12 0.025 240); border-color: oklch(0.22 0.025 235 / 0.5);">
+            <p class="text-xs font-bold tracking-widest uppercase mb-5 font-display text-center" style="color: oklch(0.72 0.18 192 / 0.7);">Ocean Depth Cross-Section</p>
+            <div class="space-y-2">
+              {[
+                { zone: "Sunlight Zone", depth: "0–200m",       emoji: "☀️", bg: "oklch(0.20 0.045 210)", pct: "100%" },
+                { zone: "Twilight Zone", depth: "200–1,000m",   emoji: "🌙", bg: "oklch(0.16 0.035 220)", pct: "82%" },
+                { zone: "Midnight Zone", depth: "1,000–4,000m", emoji: "🌑", bg: "oklch(0.14 0.028 230)", pct: "64%" },
+                { zone: "Abyssal Zone",  depth: "4,000–6,000m", emoji: "⬛", bg: "oklch(0.11 0.022 238)", pct: "46%" },
+                { zone: "Hadal Zone",    depth: "6,000–11,000m",emoji: "🕳️", bg: "oklch(0.09 0.016 245)", pct: "28%" },
+              ].map(z => (
+                <div class="flex items-center gap-3 py-2.5 px-4 rounded-xl" style={`background: ${z.bg};`}>
+                  <span class="text-lg w-6 text-center flex-shrink-0">{z.emoji}</span>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-baseline justify-between gap-2 mb-1.5">
+                      <span class="text-sm font-semibold font-display" style="color: oklch(0.88 0.008 235);">{z.zone}</span>
+                      <span class="text-xs font-display flex-shrink-0" style="color: oklch(0.84 0.15 75 / 0.9);">{z.depth}</span>
+                    </div>
+                    <div class="h-1 rounded-full" style={`width: ${z.pct}; background: linear-gradient(to right, oklch(0.72 0.18 192 / 0.7), oklch(0.72 0.18 192 / 0.1));`}></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p class="text-center text-xs mt-4 font-body italic" style="color: oklch(0.45 0.012 235);">Each zone has its own unique ecosystem and lifeforms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         4. CREATURES GRID
+    ================================================================ -->
+    <section
+      id="creatures-section"
+      class="py-20 md:py-28 px-4"
+      style="background: oklch(0.12 0.025 240);"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-xs font-bold tracking-widest uppercase mb-3 font-display" style="color: oklch(0.72 0.18 192);">Marine Life</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-display mb-4" style="color: oklch(0.95 0.004 235);">Meet the Creatures</h2>
+          <p class="text-base max-w-xl mx-auto font-body leading-relaxed" style="color: oklch(0.60 0.014 235);">
+            From the largest animal ever to live on Earth to creatures that glow in the dark — the ocean is full of extraordinary life.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              emoji: "🐋",
+              name: "Blue Whale",
+              sci: "Balaenoptera musculus",
+              depth: "Surface – 500m",
+              tag: "Mammal",
+              fact: "The largest animal ever known to have existed — up to 30 metres long, 180 tonnes, and with a heart the size of a small car.",
+            },
+            {
+              emoji: "🦑",
+              name: "Giant Squid",
+              sci: "Architeuthis dux",
+              depth: "200 – 1,000m",
+              tag: "Cephalopod",
+              fact: "Has eyes the size of volleyballs — the largest eyes of any living animal. Scientists rarely encounter one alive.",
+            },
+            {
+              emoji: "🐡",
+              name: "Anglerfish",
+              sci: "Lophiiformes",
+              depth: "200 – 4,000m",
+              tag: "Fish",
+              fact: "Uses a bioluminescent lure dangling from its forehead to attract prey in total darkness — the ocean's original lantern.",
+            },
+            {
+              emoji: "🦐",
+              name: "Mantis Shrimp",
+              sci: "Stomatopoda",
+              depth: "1 – 70m",
+              tag: "Crustacean",
+              fact: "Can punch with the force of a bullet. Sees 16 color receptors — humans have just 3. It perceives colors we can't even imagine.",
+            },
+            {
+              emoji: "🐙",
+              name: "Mimic Octopus",
+              sci: "Thaumoctopus mimicus",
+              depth: "Shallow reef",
+              tag: "Cephalopod",
+              fact: "Can impersonate over 15 other species — lionfish, flatfish, sea snakes. Each mimicry is a different defensive strategy.",
+            },
+            {
+              emoji: "🦇",
+              name: "Vampire Squid",
+              sci: "Vampyroteuthis infernalis",
+              depth: "600 – 900m",
+              tag: "Cephalopod",
+              fact: "Neither squid nor octopus — a unique species. Lives in oxygen minimum zones where most predators suffocate.",
+            },
+          ].map(creature => (
+            <div class="card-ocean group">
+              <div class="flex items-start justify-between mb-4">
+                <span class="text-5xl leading-none">{creature.emoji}</span>
+                <span
+                  class="text-xs font-semibold px-2.5 py-1 rounded-full font-display"
+                  style="background: oklch(0.72 0.18 192 / 0.12); color: oklch(0.72 0.18 192);"
+                >
+                  {creature.tag}
+                </span>
+              </div>
+              <h3 class="text-xl font-bold font-display mb-0.5" style="color: oklch(0.95 0.004 235);">{creature.name}</h3>
+              <p class="text-xs italic mb-3 font-body" style="color: oklch(0.55 0.014 235);">{creature.sci}</p>
+              <div class="flex items-center gap-1.5 mb-4">
+                <svg class="w-3.5 h-3.5 flex-shrink-0" style="color: oklch(0.84 0.15 75);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+                <span class="text-xs font-semibold font-display" style="color: oklch(0.84 0.15 75);">{creature.depth}</span>
+              </div>
+              <p class="text-sm leading-relaxed font-body" style="color: oklch(0.62 0.012 235);">{creature.fact}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         5. OCEAN ZONES
+    ================================================================ -->
+    <section
+      id="zones"
+      class="py-20 md:py-28 px-4"
+      style="background: linear-gradient(to bottom, oklch(0.10 0.02 245), oklch(0.08 0.014 248));"
+    >
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-xs font-bold tracking-widest uppercase mb-3 font-display" style="color: oklch(0.72 0.18 192);">Explore the Depths</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-display mb-4" style="color: oklch(0.95 0.004 235);">The 5 Ocean Zones</h2>
+          <p class="text-base max-w-xl mx-auto font-body leading-relaxed" style="color: oklch(0.60 0.014 235);">
+            The ocean is divided into distinct layers based on depth, light, pressure, and temperature — each with its own unique ecosystem.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {[
+            {
+              name: "Sunlight Zone",
+              latin: "Epipelagic",
+              depth: "0 – 200m",
+              emoji: "☀️",
+              bg: "oklch(0.20 0.04 210)",
+              desc: "Where photosynthesis happens and sunlight floods the water. Colorful coral reefs, sea turtles, dolphins, sharks, and most of the marine life we know best all live here.",
+            },
+            {
+              name: "Twilight Zone",
+              latin: "Mesopelagic",
+              depth: "200 – 1,000m",
+              emoji: "🌙",
+              bg: "oklch(0.15 0.03 222)",
+              desc: "Only faint blue light filters this deep. Creatures here often migrate to the surface at night to feed, then sink back down before sunrise to hide from predators.",
+            },
+            {
+              name: "Midnight Zone",
+              latin: "Bathypelagic",
+              depth: "1,000 – 4,000m",
+              emoji: "🌑",
+              bg: "oklch(0.13 0.025 232)",
+              desc: "Total darkness, extreme pressure, near-freezing temperatures. No sunlight ever reaches here. Life survives through bioluminescence and the slow rain of dead matter from above.",
+            },
+            {
+              name: "Abyssal Zone",
+              latin: "Abyssopelagic",
+              depth: "4,000 – 6,000m",
+              emoji: "⬛",
+              bg: "oklch(0.11 0.022 240)",
+              desc: "The vast, flat plains of the deep ocean where 75% of the seafloor lies. Life is sparse but resilient — sea cucumbers, brittle stars, and bacteria thriving in sediment.",
+            },
+            {
+              name: "Hadal Zone",
+              latin: "Hadalpelagic",
+              depth: "6,000 – 11,000m",
+              emoji: "🕳️",
+              bg: "oklch(0.09 0.018 246)",
+              desc: "Found only in the deepest ocean trenches. The Mariana Trench reaches 11km — deeper than Everest is tall. Astoundingly, life still thrives in these crushing conditions.",
+            },
+          ].map(zone => (
+            <div
+              class="flex gap-5 p-5 rounded-2xl border transition-all duration-200"
+              style={`background: ${zone.bg}; border-color: oklch(0.72 0.18 192 / 0.10);`}
+            >
+              <div class="text-4xl flex-shrink-0 self-start pt-0.5">{zone.emoji}</div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-baseline gap-2 mb-2">
+                  <h3 class="text-xl font-bold font-display" style="color: oklch(0.95 0.004 235);">{zone.name}</h3>
+                  <span class="text-sm font-display italic" style="color: oklch(0.55 0.014 235);">{zone.latin}</span>
+                  <span class="ml-auto text-sm font-bold font-display" style="color: oklch(0.84 0.15 75);">{zone.depth}</span>
+                </div>
+                <p class="text-sm leading-relaxed font-body" style="color: oklch(0.62 0.012 235);">{zone.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         6. SCIENCE TOPICS GRID
+    ================================================================ -->
+    <section
+      id="science"
+      class="py-20 md:py-28 px-4"
+      style="background: oklch(0.11 0.022 242);"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-xs font-bold tracking-widest uppercase mb-3 font-display" style="color: oklch(0.72 0.18 192);">Science Topics</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-display mb-4" style="color: oklch(0.95 0.004 235);">The Science of the Sea</h2>
+          <p class="text-base max-w-xl mx-auto font-body leading-relaxed" style="color: oklch(0.60 0.014 235);">
+            From the physics of ocean currents to the chemistry of bioluminescence — explore the science behind marine life.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              emoji: "💡",
+              title: "Bioluminescence",
+              tag: "Biology",
+              desc: "How and why deep-sea creatures produce cold light — from anglerfish lures to the plankton that makes waves glow electric blue at night.",
+            },
+            {
+              emoji: "🌊",
+              title: "Ocean Currents",
+              tag: "Oceanography",
+              desc: "The ocean's giant conveyor belt moves heat around the planet, driving weather patterns and keeping Earth livable for all life.",
+            },
+            {
+              emoji: "🕸️",
+              title: "Food Webs",
+              tag: "Ecology",
+              desc: "From microscopic phytoplankton to the great blue whale — understand how energy flows through the ocean's vast ecosystems.",
+            },
+            {
+              emoji: "🗺️",
+              title: "Ocean Mapping",
+              tag: "Technology",
+              desc: "We've mapped only 24% of the ocean floor. Learn how sonar, satellites, and deep-sea submersibles are revealing the hidden landscape below.",
+            },
+            {
+              emoji: "🌡️",
+              title: "Ocean & Climate",
+              tag: "Climate Science",
+              desc: "The ocean absorbs 90% of Earth's excess heat. Understanding ocean health is inseparable from understanding climate change.",
+            },
+            {
+              emoji: "🧬",
+              title: "Marine Adaptations",
+              tag: "Evolution",
+              desc: "How do fish survive 400 atmospheres of pressure? How do seals hold their breath for 2 hours? The science of extreme biological adaptation.",
+            },
+          ].map(topic => (
+            <div class="card-ocean group cursor-pointer">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="text-3xl">{topic.emoji}</span>
+                <span
+                  class="text-xs font-semibold px-2.5 py-1 rounded-full font-display"
+                  style="background: oklch(0.84 0.15 75 / 0.12); color: oklch(0.84 0.15 75);"
+                >
+                  {topic.tag}
+                </span>
+              </div>
+              <h3 class="text-lg font-bold font-display mb-2" style="color: oklch(0.95 0.004 235);">{topic.title}</h3>
+              <p class="text-sm leading-relaxed font-body" style="color: oklch(0.60 0.012 235);">{topic.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         7. HOW IT WORKS
+    ================================================================ -->
+    <section
+      id="how-it-works"
+      class="py-20 md:py-28 px-4"
+      style="background: linear-gradient(to bottom, oklch(0.10 0.02 245), oklch(0.13 0.028 238));"
+    >
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-xs font-bold tracking-widest uppercase mb-3 font-display" style="color: oklch(0.72 0.18 192);">How Pelagic Works</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-display" style="color: oklch(0.95 0.004 235);">Learning made for curious minds</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+          {[
+            {
+              step: "01",
+              emoji: "🐾",
+              title: "Pick a creature",
+              desc: "Browse our library of marine animals — from common sea creatures to bizarre deep-sea oddities you've never heard of.",
+            },
+            {
+              step: "02",
+              emoji: "📖",
+              title: "Read and discover",
+              desc: "Dive into science-first articles written for young readers. Real biology, real terminology, real research — never dumbed down.",
+            },
+            {
+              step: "03",
+              emoji: "🧪",
+              title: "Test what you know",
+              desc: "Reinforce your learning with quizzes, hands-on activities, and discussion questions designed for curious, scientific minds.",
+            },
+          ].map(s => (
+            <div class="text-center">
+              <div
+                class="inline-flex items-center justify-center w-16 h-16 rounded-2xl text-2xl mb-4"
+                style="background: oklch(0.72 0.18 192 / 0.10); border: 1px solid oklch(0.72 0.18 192 / 0.22);"
+              >
+                {s.emoji}
+              </div>
+              <div class="text-xs font-bold tracking-widest font-display mb-2" style="color: oklch(0.72 0.18 192 / 0.65);">STEP {s.step}</div>
+              <h3 class="text-xl font-bold font-display mb-3" style="color: oklch(0.95 0.004 235);">{s.title}</h3>
+              <p class="text-sm leading-relaxed font-body" style="color: oklch(0.60 0.012 235);">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         8. DID YOU KNOW FACTS STRIP
+    ================================================================ -->
+    <div style="background: oklch(0.14 0.032 228); border-top: 1px solid oklch(0.22 0.04 225 / 0.4); border-bottom: 1px solid oklch(0.22 0.04 225 / 0.4);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <p class="text-center text-xs font-bold tracking-widest uppercase mb-8 font-display" style="color: oklch(0.72 0.18 192 / 0.7);">
+          🤯 Did You Know?
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {[
+            { emoji: "🐳", fact: "A blue whale's heartbeat can be detected by sensors 2 miles away and beats just 4–8 times per minute when diving." },
+            { emoji: "🦑", fact: "Squid blood is blue — not red. They use copper-based hemocyanin instead of iron-based hemoglobin to carry oxygen." },
+            { emoji: "💎", fact: "The ocean floor contains more dissolved gold than all the gold ever mined in human history. About 20 million tonnes of it." },
+            { emoji: "🌊", fact: "Sound travels 4.3× faster in water than in air — allowing whales to communicate across entire ocean basins." },
+          ].map(f => (
+            <div
+              class="flex gap-3 p-4 rounded-xl border"
+              style="background: oklch(0.16 0.028 232 / 0.6); border-color: oklch(0.72 0.18 192 / 0.10);"
+            >
+              <span class="text-2xl flex-shrink-0">{f.emoji}</span>
+              <p class="text-sm leading-relaxed font-body" style="color: oklch(0.62 0.012 235);">{f.fact}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stats-grid">
-      <div>
-        <span class="stat-number">71%</span>
-        <span class="stat-label">of Earth's surface<br />is covered by ocean</span>
-      </div>
-      <div>
-        <span class="stat-number">250,000+</span>
-        <span class="stat-label">known marine<br />species discovered</span>
-      </div>
-      <div>
-        <span class="stat-number">95%</span>
-        <span class="stat-label">of the ocean<br />remains unexplored</span>
-      </div>
-      <div>
-        <span class="stat-number">1M+</span>
-        <span class="stat-label">estimated undiscovered<br />species in the deep</span>
-      </div>
-    </div>
-  </div>
+    <!-- ================================================================
+         9. FOR EDUCATORS
+    ================================================================ -->
+    <section
+      id="teachers"
+      class="py-20 md:py-28 px-4"
+      style="background: oklch(0.12 0.025 240);"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-xs font-bold tracking-widest uppercase mb-3 font-display" style="color: oklch(0.84 0.15 75);">For Educators</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-display mb-4" style="color: oklch(0.95 0.004 235);">Built for the classroom</h2>
+          <p class="text-base max-w-2xl mx-auto font-body leading-relaxed" style="color: oklch(0.60 0.014 235);">
+            Pelagic provides free, curriculum-aligned marine biology resources for K–8 educators.
+            NGSS-compatible. Completely free. Ready to use Monday morning.
+          </p>
+        </div>
 
-  <!-- FOOTER -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              emoji: "📋",
+              title: "Lesson Plans",
+              desc: "Ready-to-use lesson plans aligned with NGSS standards. Save hours of prep with structured activities and discussion questions.",
+            },
+            {
+              emoji: "🖨️",
+              title: "Printable Guides",
+              desc: "Full-color creature profiles, ocean zone posters, and field guide pages — print and use straight out of the classroom.",
+            },
+            {
+              emoji: "✏️",
+              title: "Class Quizzes",
+              desc: "Pre-built assessments for each topic. Multiple choice, short answer, and diagram labeling in one clean package.",
+            },
+            {
+              emoji: "💬",
+              title: "Discussion Starters",
+              desc: "Thought-provoking prompts that spark scientific thinking and Socratic debate about ocean biology and conservation.",
+            },
+          ].map(r => (
+            <div class="card-ocean">
+              <div class="text-3xl mb-4">{r.emoji}</div>
+              <h3 class="text-base font-bold font-display mb-2" style="color: oklch(0.95 0.004 235);">{r.title}</h3>
+              <p class="text-sm leading-relaxed font-body" style="color: oklch(0.60 0.012 235);">{r.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base font-display transition-all duration-200"
+            style="border: 1px solid oklch(0.84 0.15 75 / 0.45); color: oklch(0.84 0.15 75);"
+          >
+            Browse Teacher Resources →
+          </a>
+          <p class="mt-3 text-xs font-display" style="color: oklch(0.40 0.012 235);">All resources are free. No sign-up required.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         10. CONSERVATION CTA
+    ================================================================ -->
+    <section
+      class="py-24 md:py-32 px-4"
+      style="background: radial-gradient(ellipse at 50% 0%, oklch(0.25 0.09 200 / 0.35), transparent 65%), linear-gradient(to bottom, oklch(0.08 0.014 248), oklch(0.12 0.025 240));"
+    >
+      <div class="max-w-4xl mx-auto text-center">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-8 font-display"
+          style="background: oklch(0.72 0.18 192 / 0.10); border: 1px solid oklch(0.72 0.18 192 / 0.28); color: oklch(0.72 0.18 192);"
+        >
+          🌊 The ocean needs young scientists
+        </div>
+        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight font-display mb-6" style="color: oklch(0.95 0.004 235);">
+          The future of the ocean<br/>starts with <span class="text-gradient">curiosity.</span>
+        </h2>
+        <p class="text-lg leading-relaxed max-w-2xl mx-auto mb-10 font-body" style="color: oklch(0.62 0.014 235);">
+          Every marine biologist, ocean conservationist, and oceanographer started as a curious kid. Start exploring today — it's free, forever.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#creatures-section"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base font-display transition-all duration-200 hover:scale-105"
+            style="background: oklch(0.72 0.18 192); color: oklch(0.08 0.02 245); box-shadow: 0 0 32px oklch(0.72 0.18 192 / 0.22);"
+          >
+            Start My Ocean Journey →
+          </a>
+          <a
+            href="/blog"
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base font-display transition-all duration-200"
+            style="border: 1px solid oklch(0.72 0.18 192 / 0.4); color: oklch(0.72 0.18 192);"
+          >
+            Read the Blog
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
 </Base>

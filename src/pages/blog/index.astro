@@ -1,30 +1,46 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0)
 );
 ---
-<Base title="Blog">
-  <section class="py-16 md:py-20">
+<Base title="Blog | Pelagic" description="Ocean science articles for curious kids — marine biology, deep sea creatures, and the wonders of the ocean.">
+  <Header />
+  <main class="flex-1 min-h-screen py-16 md:py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-surface-900 font-display mb-10">Blog</h1>
+      <div class="mb-12">
+        <p class="text-xs font-bold tracking-widest uppercase mb-3 font-display" style="color: oklch(0.72 0.18 192);">From the Deep</p>
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight font-display" style="color: oklch(0.95 0.004 235);">Ocean Science Blog</h1>
+        <p class="mt-3 text-base font-body leading-relaxed" style="color: oklch(0.60 0.014 235);">Science-first articles about marine life, ocean zones, and the biology of the deep.</p>
+      </div>
+
       {posts.length === 0 && (
-        <p class="text-surface-800/50">No posts yet — check back soon.</p>
+        <p class="font-body" style="color: oklch(0.50 0.012 235);">No posts yet — check back soon.</p>
       )}
-      <ul class="space-y-8">
+
+      <ul class="space-y-6">
         {posts.map((post) => (
           <li>
-            <a href={`/blog/${post.id}`} class="group block">
-              <h2 class="text-xl font-semibold text-surface-900 group-hover:text-brand-500 transition-colors">
+            <a
+              href={`/blog/${post.id}`}
+              class="group block p-6 rounded-2xl border transition-all duration-200"
+              style="background: oklch(0.13 0.025 240); border-color: oklch(0.22 0.025 235 / 0.45);"
+            >
+              <h2
+                class="text-xl font-semibold font-display mb-2 transition-colors duration-150 group-hover:text-gradient"
+                style="color: oklch(0.92 0.006 235);"
+              >
                 {post.data.title}
               </h2>
               {post.data.description && (
-                <p class="mt-2 text-surface-800/60 leading-relaxed">{post.data.description}</p>
+                <p class="text-sm leading-relaxed mb-3 font-body" style="color: oklch(0.58 0.012 235);">{post.data.description}</p>
               )}
               {post.data.pubDate && (
-                <time class="mt-2 block text-sm text-surface-800/40">
+                <time class="text-xs font-display" style="color: oklch(0.42 0.012 235);">
                   {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </time>
               )}
@@ -33,5 +49,6 @@ const posts = (await getCollection('blog')).sort(
         ))}
       </ul>
     </div>
-  </section>
+  </main>
+  <Footer />
 </Base>

@@ -1,22 +1,56 @@
 ---
 const year = new Date().getFullYear();
 ---
-<footer class="border-t border-surface-200/15 py-12 mt-auto bg-surface-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-      <div>
-        <p class="text-base font-bold text-surface-950 font-display">OceanLab</p>
-        <p class="mt-1 text-sm text-surface-800/45 font-body">Marine science education for curious young minds.</p>
+<footer style="background: oklch(0.08 0.015 245); border-top: 1px solid oklch(0.72 0.18 192 / 0.12);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <!-- Brand column -->
+      <div class="md:col-span-1">
+        <a href="/" class="inline-flex items-center gap-2 font-display font-bold text-xl tracking-tight mb-3" style="color: oklch(0.72 0.18 192);">
+          PELA<span style="color: oklch(0.84 0.15 75);">GIC</span>
+        </a>
+        <p class="text-sm leading-relaxed font-body" style="color: oklch(0.50 0.014 235);">
+          Free ocean science education for curious kids ages 7–14.
+        </p>
       </div>
-      <div class="flex flex-wrap gap-6">
-        <a href="#explore" class="text-sm text-surface-800/45 hover:text-brand-400 transition-colors font-display">Explore</a>
-        <a href="#how-it-works" class="text-sm text-surface-800/45 hover:text-brand-400 transition-colors font-display">How It Works</a>
-        <a href="/blog" class="text-sm text-surface-800/45 hover:text-brand-400 transition-colors font-display">Blog</a>
-        <a href="mailto:hello@oceanlab.science" class="text-sm text-surface-800/45 hover:text-brand-400 transition-colors font-display">Contact</a>
+
+      <!-- Explore column -->
+      <div>
+        <p class="text-xs font-bold tracking-widest uppercase mb-4 font-display" style="color: oklch(0.50 0.014 235);">Explore</p>
+        <ul class="space-y-2.5">
+          <li><a href="#creatures-section" class="text-sm font-display transition-colors duration-150" style="color: oklch(0.55 0.014 235);" onmouseover="this.style.color='oklch(0.72 0.18 192)'" onmouseout="this.style.color='oklch(0.55 0.014 235)'">Marine Animals</a></li>
+          <li><a href="#zones" class="text-sm font-display transition-colors duration-150" style="color: oklch(0.55 0.014 235);" onmouseover="this.style.color='oklch(0.72 0.18 192)'" onmouseout="this.style.color='oklch(0.55 0.014 235)'">Ocean Zones</a></li>
+          <li><a href="#science" class="text-sm font-display transition-colors duration-150" style="color: oklch(0.55 0.014 235);" onmouseover="this.style.color='oklch(0.72 0.18 192)'" onmouseout="this.style.color='oklch(0.55 0.014 235)'">Science Topics</a></li>
+          <li><a href="/blog" class="text-sm font-display transition-colors duration-150" style="color: oklch(0.55 0.014 235);" onmouseover="this.style.color='oklch(0.72 0.18 192)'" onmouseout="this.style.color='oklch(0.55 0.014 235)'">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Educators column -->
+      <div>
+        <p class="text-xs font-bold tracking-widest uppercase mb-4 font-display" style="color: oklch(0.50 0.014 235);">Educators</p>
+        <ul class="space-y-2.5">
+          <li><a href="#teachers" class="text-sm font-display transition-colors duration-150" style="color: oklch(0.55 0.014 235);" onmouseover="this.style.color='oklch(0.72 0.18 192)'" onmouseout="this.style.color='oklch(0.55 0.014 235)'">For Teachers</a></li>
+          <li><a href="#teachers" class="text-sm font-display transition-colors duration-150" style="color: oklch(0.55 0.014 235);" onmouseover="this.style.color='oklch(0.72 0.18 192)'" onmouseout="this.style.color='oklch(0.55 0.014 235)'">Lesson Plans</a></li>
+          <li><a href="#teachers" class="text-sm font-display transition-colors duration-150" style="color: oklch(0.55 0.014 235);" onmouseover="this.style.color='oklch(0.72 0.18 192)'" onmouseout="this.style.color='oklch(0.55 0.014 235)'">Printable Guides</a></li>
+          <li><a href="#teachers" class="text-sm font-display transition-colors duration-150" style="color: oklch(0.55 0.014 235);" onmouseover="this.style.color='oklch(0.72 0.18 192)'" onmouseout="this.style.color='oklch(0.55 0.014 235)'">Class Quizzes</a></li>
+        </ul>
+      </div>
+
+      <!-- About column -->
+      <div>
+        <p class="text-xs font-bold tracking-widest uppercase mb-4 font-display" style="color: oklch(0.50 0.014 235);">About</p>
+        <ul class="space-y-2.5">
+          <li><a href="#" class="text-sm font-display transition-colors duration-150" style="color: oklch(0.55 0.014 235);" onmouseover="this.style.color='oklch(0.72 0.18 192)'" onmouseout="this.style.color='oklch(0.55 0.014 235)'">Our Mission</a></li>
+          <li><a href="mailto:hello@pelagic.science" class="text-sm font-display transition-colors duration-150" style="color: oklch(0.55 0.014 235);" onmouseover="this.style.color='oklch(0.72 0.18 192)'" onmouseout="this.style.color='oklch(0.55 0.014 235)'">Contact</a></li>
+        </ul>
       </div>
     </div>
-    <div class="mt-8 pt-6 border-t border-surface-200/10">
-      <p class="text-sm text-surface-800/30 font-display">&copy; {year} OceanLab. All rights reserved. Built with curiosity.</p>
+
+    <div class="pt-6" style="border-top: 1px solid oklch(0.20 0.02 240);">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <p class="text-xs font-display" style="color: oklch(0.38 0.012 235);">&copy; {year} Pelagic. All rights reserved. Built with curiosity.</p>
+        <p class="text-xs font-display" style="color: oklch(0.38 0.012 235);">Free ocean science for every curious kid. 🌊</p>
+      </div>
     </div>
   </div>
 </footer>
